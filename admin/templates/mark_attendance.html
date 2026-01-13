@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mark attendance</title>
+    <style>
+        table {
+            width: 90%;
+            margin: 50px auto;
+            border-collapse: collapse;
+            background-color: #1a1a1a;
+            color: #0ff;
+            font-family: 'Arial', sans-serif;
+            box-shadow: 0 0 20px #0ff, 0 0 40px #0ff inset;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: center;
+            border-bottom: 1px solid #0ff;
+        }
+
+        th {
+            background-color: #111;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        tr:hover {
+            background-color: #0a0a0a;
+            box-shadow: 0 0 10px #0ff inset;
+        }
+
+        h2 {
+            text-align: center;
+            color: #0ff;
+            margin-top: 30px;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .submit-btn {
+            display: block;
+            margin: 30px auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #0ff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .submit-btn:hover {
+            background-color: #00cccc;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="/mark_attendance" method="POST">
+        <div>
+            <h2>Mark Attendance</h2>
+            <table>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Mobile</th>
+                    <th>Job Title</th>
+                    <th>Attendance</th>
+                </tr>
+
+                {% for emp in employees %}
+                <tr>
+                    <td>{{ emp[0] }}</td>
+                    <td>{{ emp[1] }}</td>
+                    <td>{{ emp[2] }}</td>
+                    <td>{{ emp[3] }}</td>
+                    <td>
+                        <select name="attendance_{{ emp[0] }}">
+                            <option value="Present">Present</option>
+                            <option value="Absent">Absent</option>
+                        </select>
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+            <button type="submit" class="submit-btn">Submit Attendance</button>
+        </div>
+    </form>
+    <a a href="login">Home page</a>
+</body>
+
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>search employee </title>
+</head>
+<style>
+    /* Form styling */
+    form {
+        background-color: #1a1a1a;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 0 20px #0ff, 0 0 40px #0ff, 0 0 60px #0ff;
+        width: 400px;
+        margin: 30px auto;
+        color: #0ff;
+        font-family: 'Arial', sans-serif;
+    }
+
+    form label {
+        display: block;
+        margin-bottom: 10px;
+        font-size: 18px;
+    }
+
+    form input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        border-radius: 10px;
+        border: none;
+        margin-bottom: 15px;
+        background-color: #111;
+        color: #0ff;
+    }
+
+    form input[type="submit"] {
+        background-color: #0ff;
+        color: #111;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    form input[type="submit"]:hover {
+        background-color: #00b3b3;
+        box-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+    }
+
+    /* Table styling */
+    table {
+        width: 80%;
+        margin: 30px auto;
+        border-collapse: collapse;
+        background-color: #1a1a1a;
+        color: #0ff;
+        font-family: 'Arial', sans-serif;
+        box-shadow: 0 0 20px #0ff, 0 0 40px #0ff inset;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    th,
+    td {
+        padding: 12px 15px;
+        text-align: center;
+        border-bottom: 1px solid #0ff;
+    }
+
+    th {
+        background-color: #111;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    tr:hover {
+        background-color: #0a0a0a;
+        box-shadow: 0 0 10px #0ff inset;
+    }
+</style>
+
+<body>
+
+
+
+
+    <form action="/search_employee" method="get">
+        <label>Enter Employee Name:</label>
+        <input type="text" name="name" placeholder="Enter name">
+        <input type="submit" value="Search">
+    </form>
+
+    {% if employee %}
+    <h3>Employee Details:</h3>
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>Mobile</th>
+            <th>Aadhar</th>
+            <th>Account</th>
+            <th>IFSC</th>
+            <th>UPI</th>
+            <th>Job</th>
+        </tr>
+        <tr>
+            <td>{{ employee[0] }}</td>
+            <td>{{ employee[1] }}</td>
+            <td>{{ employee[2] }}</td>
+            <td>{{ employee[3] }}</td>
+            <td>{{ employee[4] }}</td>
+            <td>{{ employee[5] }}</td>
+            <td>{{ employee[6] }}</td>
+        </tr>
+    </table>
+    {% endif %}
+    <a a href="login">Home page</a>
+
+</body>
+
+</html>

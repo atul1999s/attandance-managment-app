@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Details</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #2b5876, #4e4376);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .form-box {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 15px;
+            padding: 40px 60px;
+            text-align: center;
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+            width: 450px;
+        }
+
+        h1 {
+            color: #fff;
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+        }
+
+        label {
+            color: #e0e0e0;
+            font-size: 14px;
+            display: block;
+            text-align: left;
+            margin-bottom: 5px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px 12px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            outline: none;
+            font-size: 14px;
+        }
+
+        select option {
+            background: #4e4376;
+        }
+
+        input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            background: linear-gradient(90deg, #ff6a00, #ee0979);
+            color: white;
+            font-weight: bold;
+            font-size: 15px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background: linear-gradient(90deg, #ee0979, #ff6a00);
+            transform: scale(1.03);
+        }
+
+        a button {
+            margin-top: 15px;
+            background: transparent;
+            border: 1px solid white;
+            color: white;
+            border-radius: 8px;
+            padding: 10px 15px;
+            cursor: pointer;
+        }
+
+        a button:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: scale(1.05);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="form-box">
+        <h1>Personal Details</h1>
+        <form action="/form" method="POST">
+
+            <label>Name:</label>
+            <input type="text" name="name" placeholder="Enter your name" required>
+
+            <label>Mobile Number:</label>
+            <input type="text" name="mobile_number" placeholder="Enter your number" required>
+
+            <label>Aadhaar Number:</label>
+            <input type="text" name="addhar_number" placeholder="Enter your Aadhaar number" required>
+
+            <label>Account Number:</label>
+            <input type="text" name="account_number" placeholder="Enter your account number" required>
+
+            <label>IFSC Code:</label>
+            <input type="text" name="ifsc_code" placeholder="Enter your IFSC code" required>
+
+            <label>UPI ID:</label>
+            <input type="text" name="upi_id" placeholder="Enter your UPI ID" required>
+
+            <label>Job Title:</label>
+            <select name="job_title" required>
+                <option value="">Select job</option>
+                <option value="painter">Painter</option>
+                <option value="helper">Helper</option>
+                <option value="electrician">Electrician</option>
+                <option value="plumber">Plumber</option>
+                <option value="mason">Mason</option>
+                <option value="tiles_mason">Tiles Mason</option>
+            </select>
+
+            <input type="submit" value="Submit">
+
+        </form>
+
+        <a href="/login"><button type="button">Back to Login</button></a>
+    </div>
+</body>
+</html>
